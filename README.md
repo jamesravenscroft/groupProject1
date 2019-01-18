@@ -15,7 +15,7 @@ https://www.openbrewerydb.org,
    https://holidayapi.com
   
 Code Dump 
-<!--date picker-->
+-date picker-
  
     head 
         link href="dist/css/datepicker.min.css" rel="stylesheet" type="text/css" 
@@ -27,7 +27,7 @@ Code Dump
  
     input type='text' class="datepicker-here" data-position="right top" / 
  
-    //manual Initialization 
+    manual Initialization 
 $('#my-element').datepicker([options]) 
 // Access instance of plugin 
 $('#my-element').data('datepicker') 
@@ -37,17 +37,17 @@ div class="datepicker-here" data-language='en'          /div
 
 
 
-<!--if no holidays that day, take username and declare "its USERNAME DAY"-->
+if no holidays that day, take username and declare "its USERNAME DAY"
  
 if (holiday == false{ get USERNAME, "its USERNAME DAY});
  
-<!---standard AJAX code, from Unit 6.11, BANDS IN TOWN exercise-->
+standard AJAX code, from Unit 6.11, BANDS IN TOWN exercise
  
 script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"  
 script 
   function searchBandsInTown(artist) { 
  
-    // Querying the bandsintown api for the selected artist, the ?app_id parameter is required, but can equal anything 
+     Querying the bandsintown api for the selected artist, the ?app_id parameter is required, but can equal anything 
     var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp"; 
     $.ajax({ 
       url: queryURL, 
@@ -58,12 +58,12 @@ script
       console.log(response); 
  
       // Constructing HTML containing the artist information 
-      var artistName = $("<h1>").text(response.name); 
-      var artistURL = $("<a>").attr("href", response.url).append(artistName); 
+      var artistName = $( h1 ).text(response.name); 
+      var artistURL = $( a ).attr("href", response.url).append(artistName); 
       var artistImage = $("<img>").attr("src", response.thumb_url); 
-      var trackerCount = $("<h2>").text(response.tracker_count + " fans tracking this artist"); 
-      var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
-      var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
+      var trackerCount = $( h2 ).text(response.tracker_count + " fans tracking this artist"); 
+      var upcomingEvents = $( h2 ).text(response.upcoming_event_count + " upcoming events");
+      var goToArtist = $( a> ).attr("href", response.url).text("See Tour Dates");
 
       // Empty the contents of the artist-div, append the new artist content
       $("#artist-div").empty();
