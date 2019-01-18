@@ -14,7 +14,7 @@ https://www.openbrewerydb.org,
  https://www.calendarindex.com /
    https://holidayapi.com
   
-Code Dump 
+<b>Code Dump</b> 
 -date picker-
  
     head 
@@ -41,7 +41,7 @@ if no holidays that day, take username and declare "its USERNAME DAY"
  
 if (holiday == false{ get USERNAME, "its USERNAME DAY});
  
-standard AJAX code, from Unit 6.11, BANDS IN TOWN exercise
+<b>standard AJAX code, from Unit 6.11, BANDS IN TOWN exercise</b>
  
 script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"  
 script 
