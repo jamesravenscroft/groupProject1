@@ -14,8 +14,13 @@ https://www.openbrewerydb.org,
  https://www.calendarindex.com /
    https://holidayapi.com
   
+<<<<<<< HEAD
 Code Dump 
 <!--date picker-->
+=======
+<b>Code Dump</b> 
+-date picker-
+>>>>>>> e1823416a2fea8437a118385c6b122bb3fb58860
  
     head 
         link href="dist/css/datepicker.min.css" rel="stylesheet" type="text/css" 
@@ -27,7 +32,11 @@ Code Dump
  
     input type='text' class="datepicker-here" data-position="right top" / 
  
+<<<<<<< HEAD
     //manual Initialization 
+=======
+    manual Initialization 
+>>>>>>> e1823416a2fea8437a118385c6b122bb3fb58860
 $('#my-element').datepicker([options]) 
 // Access instance of plugin 
 $('#my-element').data('datepicker') 
@@ -37,17 +46,29 @@ div class="datepicker-here" data-language='en'          /div
 
 
 
+<<<<<<< HEAD
 <!--if no holidays that day, take username and declare "its USERNAME DAY"-->
  
 if (holiday == false{ get USERNAME, "its USERNAME DAY});
  
 <!---standard AJAX code, from Unit 6.11, BANDS IN TOWN exercise-->
+=======
+if no holidays that day, take username and declare "its USERNAME DAY"
+ 
+if (holiday == false{ get USERNAME, "its USERNAME DAY});
+ 
+<b>standard AJAX code, from Unit 6.11, BANDS IN TOWN exercise</b>
+>>>>>>> e1823416a2fea8437a118385c6b122bb3fb58860
  
 script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"  
 script 
   function searchBandsInTown(artist) { 
  
+<<<<<<< HEAD
     // Querying the bandsintown api for the selected artist, the ?app_id parameter is required, but can equal anything 
+=======
+     Querying the bandsintown api for the selected artist, the ?app_id parameter is required, but can equal anything 
+>>>>>>> e1823416a2fea8437a118385c6b122bb3fb58860
     var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp"; 
     $.ajax({ 
       url: queryURL, 
@@ -58,12 +79,21 @@ script
       console.log(response); 
  
       // Constructing HTML containing the artist information 
+<<<<<<< HEAD
       var artistName = $("<h1>").text(response.name); 
       var artistURL = $("<a>").attr("href", response.url).append(artistName); 
       var artistImage = $("<img>").attr("src", response.thumb_url); 
       var trackerCount = $("<h2>").text(response.tracker_count + " fans tracking this artist"); 
       var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
       var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
+=======
+      var artistName = $( h1 ).text(response.name); 
+      var artistURL = $( a ).attr("href", response.url).append(artistName); 
+      var artistImage = $("<img>").attr("src", response.thumb_url); 
+      var trackerCount = $( h2 ).text(response.tracker_count + " fans tracking this artist"); 
+      var upcomingEvents = $( h2 ).text(response.upcoming_event_count + " upcoming events");
+      var goToArtist = $( a> ).attr("href", response.url).text("See Tour Dates");
+>>>>>>> e1823416a2fea8437a118385c6b122bb3fb58860
 
       // Empty the contents of the artist-div, append the new artist content
       $("#artist-div").empty();
@@ -82,4 +112,8 @@ script
     searchBandsInTown(inputArtist);
   });
 /script
+<<<<<<< HEAD
 </pre>
+=======
+</pre>
+>>>>>>> e1823416a2fea8437a118385c6b122bb3fb58860
