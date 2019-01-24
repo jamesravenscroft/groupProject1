@@ -1,0 +1,54 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write;
+    }
+  }
+}
+<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+<script>
+ 
+// Initialize Firebase
+ var config = {
+  
+ apiKey: "AIzaSyBPJd3lJOf4RhZc-gB5GbJIzgcj9uLeaUo",
+   
+authDomain: "reasontodrink-34c17.firebaseapp.com",
+   
+databaseURL: "https://reasontodrink-34c17.firebaseio.com",
+ 
+  projectId: "reasontodrink-34c17",
+   storageBucket: 
+"reasontodrink-34c17.appspot.com",
+  
+ messagingSenderId: "207919555566"
+ };
+ 
+firebase.initializeApp(config);
+</script>
+
+
+
+Project name
+
+reasonToDrink
+
+Project ID
+
+reasontodrink-34c17
+
+Cloud Firestore location
+us-central
+
+Web API Key
+
+AIzaSyBPJd3lJOf4RhZc-gB5GbJIzgcj9uLeaUo
+
+Public settings
+
+These settings control instances of your project 
+shown to the public
+
+Public-facing name
+
+project-207919555566

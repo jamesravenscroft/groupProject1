@@ -14,13 +14,8 @@ https://www.openbrewerydb.org,
  https://www.calendarindex.com /
    https://holidayapi.com
   
-<<<<<<< HEAD
 Code Dump 
 <!--date picker-->
-=======
-<b>Code Dump</b> 
--date picker-
->>>>>>> e1823416a2fea8437a118385c6b122bb3fb58860
  
     head 
         link href="dist/css/datepicker.min.css" rel="stylesheet" type="text/css" 
@@ -46,19 +41,11 @@ div class="datepicker-here" data-language='en'          /div
 
 
 
-<<<<<<< HEAD
 <!--if no holidays that day, take username and declare "its USERNAME DAY"-->
  
 if (holiday == false{ get USERNAME, "its USERNAME DAY});
  
 <!---standard AJAX code, from Unit 6.11, BANDS IN TOWN exercise-->
-=======
-if no holidays that day, take username and declare "its USERNAME DAY"
- 
-if (holiday == false{ get USERNAME, "its USERNAME DAY});
- 
-<b>standard AJAX code, from Unit 6.11, BANDS IN TOWN exercise</b>
->>>>>>> e1823416a2fea8437a118385c6b122bb3fb58860
  
 script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"  
 script 
