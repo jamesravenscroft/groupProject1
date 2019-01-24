@@ -1,113 +1,237 @@
-<html lang="en"><head>
-    <meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Group Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+    <!-- Compiled and minified CSS -->
     
-    <title>Reason to Drink</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<!--date picker link-->
-<!-- <link href="dist/css/datepicker.min.css" rel="stylesheet" type="text/css"> -->
-<script src="assets/javascript/datepicker.js"></script>
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-<!-- Include English language -->
-<script src="dist/js/i18n/datepicker.en.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="./assets/javascript/app.js"></script>
 </head>
-
-  <body>
-
-    <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div> /.nav-collapse -->
-      <!-- </div>
-    </nav> -->
-
+<body>
     <div class="container">
-            <div class="jumbotron">
-            <h1 class="display-4">Reason to Drink!</h1>
-            <p class="lead">You're awesome. Its time to celebrate</p>
-            <hr class="my-4">
-            <p>Find a reason to celebrate and a brewery to get crunk at.</p>
-            <!-- <p class="lead">
-              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-            </p> -->
+        <div class="jumbotron">
+        <h1 class="display-4">Reason to Drink!</h1>
+        <p class="lead">You're awesome. Its time to celebrate</p>
+        <hr class="my-4">
+        <p>Find a reason to celebrate and a brewery to get crunk at.</p>
+
+        <div class="starter-template">
+            <h1>Pick a Day</h1>
+            <p class="lead">Click a day and get ready to party away.<br>
+            </p>
           </div>
 
-      <div class="starter-template">
-        <h1>Pick a Day</h1>
-        <p class="lead">Click a day and get ready to party away.<br>
-        </p>
+
+    <div class="row">
+        <input id="name" type="text" placeholder="Your name">
+        <input id="date" type="date" placeholder="Today's date (mm/dd/yyyy)">
+        <input id="country" type="text" placeholder="Pick a country">
+        <input id="state" type="text" placeholder="Pick a state">
+        <input id="region" type="text" placeholder="Pick a city">
+      </div>
+      <div class="row">
+        <button class="button-primary" id="submit">Submit</button>
       </div>
 
-      <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
-      <script>
-       // Initialize Firebase
-       var config = {
-         apiKey: "AIzaSyBPJd3lJOf4RhZc-gB5GbJIzgcj9uLeaUo",
-         authDomain: "reasontodrink-34c17.firebaseapp.com",
-         databaseURL: "https://reasontodrink-34c17.firebaseio.com",
-         projectId: "reasontodrink-34c17",
-         storageBucket: "reasontodrink-34c17.appspot.com",
-         messagingSenderId: "207919555566"
-       };
-       firebase.initializeApp(config);
-      </script>
+      <div id="user-info">
+        <h2 id="name-display"></h2>
+        <h4 id="date-display"></h4>
+        <h4 id="country-display"></h4>
+        <h4 id="state-display"></h4>
+        <h4 id="region-display"></h4>
+        
+      </div>
 
+      <!-- ADDED LIST OF BREWERIES BASED ON USER INFO -->
+      <div class="row">
+        <div id="brewDiv" class="panel-body">
+          <table id="brewTable" class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Brewery</th>
+                  <th scope="col">City</th>
+                  <th scope="col">State</th>
+                  <th scope="col">Country</th>
+                </tr>
+              </thead>
+              <tbody>
 
-<!-- date picker code goes here-->
-<script>
-  $('#my-element').datepicker([options])
-        // Access instance of plugin
-        $('#my-element').data('datepicker')
-</script>
-<div class="datepicker-here" data-language='en'></div>
-<div class="row">
-        <div class="col-lg-12">
-         <div class="form-group row">
-             <label for="bidder-name">name</label>
-             <input class="form-control" id="name" type="text">
-         </div>
-         <div class="form-group row">
-             <label for="bidder-price">date</label>
-             <input class="form-control" id="date" type="text">
-         </div>
-         <div>
-             <label for="bidder-name">country</label>
-             <input class="form-control" id="country" type="text">
-         </div>
-         <div>
-             <label for="bidder-name">state</label>
-             <input class="form-control" id="state" type="text">
-         </div>
-         <div>
-             <label for="bidder-name">region</label>
-             <input class="form-control" id="region" type="text">
-         </div>
-           <button class="btn btn-primary" id="submit" type="submit">Submit</button>
+              </tbody>
+            </table>
         </div>
-     </div>
+      </div>
+
+      <script>
+      $(document).ready(function(){
+
+var now = new Date();
+
+var day = ("0" + now.getDate()).slice(-2);
+var month = ("0" + (now.getMonth() + 1)).slice(-2);
+var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+$('#date').val(today);
 
 
+var day = $("#date").val().slice(-2);
+var month = ("0" + (now.getMonth() + 1)).slice(-2);
+var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
 
+var config = {
+    apiKey: "AIzaSyAcInbqzuEob8iQJg2J9F_6qW_09Ct9FTQ",
+    authDomain: "reason-to-drink.firebaseapp.com",
+    databaseURL: "https://reason-to-drink.firebaseio.com",
+    projectId: "reason-to-drink",
+    storageBucket: "reason-to-drink.appspot.com",
+    messagingSenderId: "115034502037"
+  };
+  firebase.initializeApp(config);
 
-    </div><!-- /.container -->
+  var database = firebase.database();
+
+  $("#submit").on("click", function(event) {
+    event.preventDefault();
   
+    var name = $("#name").val().trim();
+    console.log(name);
+    var date = $("#date").val().trim();
+    console.log(date);
+    var country = $("#country").val().trim();
+    console.log(country);
+    var state = $("#state").val().trim();
+    console.log(state);
+    var region = $("#region").val().trim();
+    console.log(region);
+  
+    var toAdd = {
+      name: name,
+      date: date,
+      country: country,
+      state: state,
+      region: region
+    }
+    
+  
+    database.ref().push(toAdd);
 
-</body></html>
+
+    database.ref().on("value", function(snapshot) {
+        $("#name-display").text(snapshot.val().name);
+        $("#date-display").text(snapshot.val().date);
+        $("#country-display").text(snapshot.val().country);
+        $("#state-display").text(snapshot.val().state);
+        $("#region-display").text(snapshot.val().region);
+        
+      })
+
+      $("#user-info").append(
+        $("<tr>").append(
+          $("<td>").text(name),
+          $("<td>").text(date),
+          $("<td>").text(country),
+          $("<td>").text(state),
+          $("<td>").text(region)
+        )
+      )
+
+      console.log(date);
+
+      searchCity = $("#region").val();
+      searchState = $("#state").val();
+      searchCountry = $("#country").val();
+      clearTable("brewTable");
+      getBreweries(searchCountry, searchState, searchCity);
+
+        // var queryURL = "https://www.calendarindex.com/api/v1/holidays?api_key=a964218e0494e47c37482a2d99753eaa276f1978&country=us" + "&year=" + year;
+
+        }) 
+  });
+
+
+///////////////////  BREWERY API CODE  /////////////////////////////////////
+
+var searchDate;
+var year = "2019";
+var month = "01";
+var day = "19";
+var searchCountry;
+var searchState;
+var searchCity;
+
+// if objects need to load in doc first
+$(document).ready(function(){
+
+});
+
+// $("#submit").on("click", function(){
+//     searchCity = $("#region").val();
+//     searchState = $("#state").val();
+//     searchCountry = $("#country").val();
+//     clearTable("brewTable");
+//     getBreweries(searchCountry, searchState, searchCity);
+// });
+
+
+
+function getBreweries(country, state, city){
+    var queryURL = "https://api.openbrewerydb.org/breweries?";
+    if(city) queryURL = queryURL + "&by_city=" + city;
+    if(state) queryURL = queryURL  + "&by_state=" + state;
+    if(country) queryURL = queryURL  + "&by_country=" + country;
+
+    callAjax(queryURL);
+
+    }
+
+function callAjax(queryURL){
+  $.ajax({
+      url: queryURL,
+      method: "GET"
+    })
+      .then(function(response) {
+        //$("#resultsDiv").text(JSON.stringify(response));
+        for(i=0; i<response.length; i++){
+          var resultName = response[i].name; 
+          var resultCity = response[i].city; 
+          var resultState = response[i].state;
+          var resultCountry = response[i].country; 
+          var resultStreet = response[i].street;
+          var resultZip = response[i].postal_code;
+          var resultPhone = response[i].phone;
+          var resultSite = response[i].website_url;
+          var resultBreweryType = response[i].brewery_type;
+        $("#brewTable").append(
+                                "<tr>" 
+                                + "<td>" 
+                                  + "<div><h5>" + resultName + "</h5></div>" 
+                                  + "<div><a href='" + resultSite + "'>" + resultSite + "</a></div>" 
+                                  + "<div>" + resultStreet + "</div>" 
+                                + "</td>" 
+                                + "<td>" + resultCity + "</td><td>" + resultState + "</td><td>" + resultCountry + "</td><td></tr>");
+        
+        }
+        
+        console.log(response);
+
+      });
+  }
+
+function clearTable(tableID){
+    $("#"+tableID+ " tbody").empty();
+}      
+      
+      </script>
+</body>
+</html>
