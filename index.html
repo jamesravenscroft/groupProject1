@@ -57,20 +57,27 @@
 
       <!-- ADDED LIST OF BREWERIES BASED ON USER INFO -->
       <div class="row">
-        <div id="brewDiv" class="panel-body">
-          <table id="brewTable" class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Brewery</th>
-                  <th scope="col">City</th>
-                  <th scope="col">State</th>
-                  <th scope="col">Country</th>
-                </tr>
-              </thead>
-              <tbody>
+        <div class="col-md-6">
+          <div id="brewDiv" class="panel-body">
+            <table id="brewTable" class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Brewery</th>
+                    <th scope="col">City</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Country</th>
+                  </tr>
+                </thead>
+                <tbody>
 
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div id="holStuff">
+            Holiday Stuff Goes Here
+          </div>
         </div>
       </div>
 
@@ -152,7 +159,9 @@ var config = {
       searchState = $("#state").val();
       searchCountry = $("#country").val();
       clearTable("brewTable");
+      getHolidays();
       getBreweries(searchCountry, searchState, searchCity);
+      
 
         // var queryURL = "https://www.calendarindex.com/api/v1/holidays?api_key=a964218e0494e47c37482a2d99753eaa276f1978&country=us" + "&year=" + year;
 
@@ -175,6 +184,29 @@ $(document).ready(function(){
 
 });
 
+function getHolidays() {
+//what is needed for CalendarIndex
+//country, year, api_key(a964218e0494e47c37482a2d99753eaa276f1978), state
+
+  var country = searchCountry;
+  console.log(country);
+  var date = "2019";
+  var state = searchState;
+  console.log(state);
+
+  var queryURLTwo = "https://calendarific.com/api/v1/holidays?country=" + country + "&year=" + date + "&state=" + state + "&api_key=a964218e0494e47c37482a2d99753eaa276f1978";
+
+
+
+   $.ajax({
+   url: queryURLTwo,
+   method: "GET"
+   }).then(function(response) {
+   console.log(response);
+   });
+
+};
+
 // $("#submit").on("click", function(){
 //     searchCity = $("#region").val();
 //     searchState = $("#state").val();
@@ -193,7 +225,7 @@ function getBreweries(country, state, city){
 
     callAjax(queryURL);
 
-    }
+    };
 
 function callAjax(queryURL){
   $.ajax({
@@ -226,7 +258,10 @@ function callAjax(queryURL){
         console.log(response);
 
       });
-  }
+  };
+
+
+
 
 function clearTable(tableID){
     $("#"+tableID+ " tbody").empty();
