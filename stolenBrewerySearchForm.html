@@ -1,0 +1,592 @@
+<body class="boxed">
+<input type="hidden" id="baseUrl" value="">
+
+<!-- Outer Starts -->
+<div class="outer">
+        <!-- Top bar starts -->
+    <div class="top-bar">
+
+        <div class="container">
+
+            <!-- Contact starts -->
+            <div class="tb-contact pull-left">
+                <!-- Email -->
+                <i class="fa fa-envelope color"></i> &nbsp; <a href="/contact">brewerydb@steadyserv.com</a>
+                &nbsp;&nbsp;
+                <!-- Phone -->
+                <i class="fa fa-phone color"></i> &nbsp; (800) 257-6898            </div>
+            <!-- Contact ends -->
+
+            <!-- Search section for responsive design -->
+            <div class="tb-search pull-left visible-xs">
+                <a href="#" class="b-dropdown"><i class="fa fa-search square-2 rounded-1 bg-color white"></i></a>
+                <div class="b-dropdown-block">
+
+
+                    <form role="form" id="headerSearch" method="GET" action="/search">
+                        <!-- Input Group -->
+                        <div class="input-group">
+                            <input id="topSearchBox" type="text" name="q" value="" class="form-control" placeholder="Search BreweryDB">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-color" type="submit">Search</button>
+                                                </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Search section ends -->
+
+            <div class="tb-auth pull-right">
+                                    <a class="stay" href="/signin">Sign In</a>
+                    &nbsp; :: &nbsp;
+                    <a class="stay" href="/signup">Sign Up Now</a>
+                            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <!-- Top bar ends -->
+
+    <!-- Header starts -->
+
+    <div class="header-2">
+
+        <!-- Container -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <!-- Logo section -->
+                    <div class="logo">
+                        <h1><a href="/"><img class="img-responsive" src="/img/BreweryDB_top_logo.png" width="243" height="51"></a></h1>
+                    </div>
+                </div>
+                <div class="col-md-3 col-md-push-6 col-sm-6">
+                    <div class="nav-search pull-right hidden-xs" style="margin-top: 12px">
+                        <div class="header-search">
+                            <form role="form" id="headerSearch" method="GET" action="/search">
+                                <!-- Input Group -->
+                                <div class="input-group">
+                                    <input id="topSearchBox" type="text" name="q" value="" class="form-control" placeholder="Search BreweryDB">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-color" type="submit">Search</button>
+                                                </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-pull-3 col-sm-12">
+                    <div class="navigation">
+                        <!-- Menu outer container -->
+                        <div id="mgmenu1" class="mgmenu_container">
+                            <ul class="mgmenu">
+                                <li class="mgmenu_button">Menu</li>
+                                <!-- Navigation starts -->
+                                
+<li id="menu1">
+<a href="#">Browse <i class="fa fa-angle-down"></i></a>
+<div class="dropdown_container" style="display: none;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <ul class="mega-links">
+<li>
+<a href="/browse/map">BreweryMap</a>
+</li>
+<li>
+<a href="/browse/regional">Regional</a>
+</li>
+<li>
+<a href="/browse/guild">Guilds</a>
+</li>
+<li>
+<a href="/browse/style">Styles</a>
+</li>
+</ul></div></div></div></div>
+</li>
+<li id="menu2">
+<a href="#">For Brewers <i class="fa fa-angle-down"></i></a>
+<div class="dropdown_container" style="display: none;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <ul class="mega-links">
+<li>
+<a href="/brewers">Get Started</a>
+</li>
+<li>
+<a href="/brewers/index/my-brewery">My Brewery</a>
+</li>
+</ul></div></div></div></div>
+</li>
+<li id="menu3">
+<a href="#">Developers <i class="fa fa-angle-down"></i></a>
+<div class="dropdown_container" style="display: none;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <ul class="mega-links">
+<li>
+<a href="/developers">Get Started</a>
+</li>
+<li>
+<a href="/developers/apps">My API Keys</a>
+</li>
+<li>
+<a href="/developers/docs">API Docs</a>
+</li>
+</ul></div></div></div></div>
+</li>
+<li id="menu4">
+<a href="#">Contribute <i class="fa fa-angle-down"></i></a>
+<div class="dropdown_container" style="display: none;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <ul class="mega-links">
+<li>
+<a href="/contribute">Get Started</a>
+</li>
+<li>
+<a href="/contribute/index/policies">Policies</a>
+</li>
+<li>
+<a href="/brewery/add">Add Brewery</a>
+</li>
+<li>
+<a href="/beer/add">Add Beer</a>
+</li>
+</ul></div></div></div></div>
+</li>                                <!-- Navigation ends -->
+                                <!-- Search link in navigation -->
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Header ends -->
+
+    <!-- Main content starts -->
+
+    <div class="main-block">
+        <div class="page-heading-two">
+    <div class="container">
+        <h2>Regional Breweries
+
+        </h2>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+
+<div class="container">
+    <form method="GET" action="/browse/regional">
+    <div class="row">
+        <div class="col-sm-2 col-sm-offset-1">
+            <div class="form-group">
+                <label for="locationType">Location Type</label>
+                <div class="dropdown bootstrap-select form-control show-tick"><select class="form-control selectpicker show-tick" id="locationType" name="locationType" required="" tabindex="-98">
+                    <option value="any" selected="">All Types</option>
+                                            <option value="micro">Micro Brewery</option>
+                                            <option value="macro">Macro Brewery</option>
+                                            <option value="nano">Nano Brewery</option>
+                                            <option value="brewpub">Brewpub</option>
+                                            <option value="production">Production Facility</option>
+                                            <option value="office">Office</option>
+                                            <option value="tasting">Tasting Room</option>
+                                            <option value="restaurant">Restaurant/Ale House</option>
+                                            <option value="cidery">Cidery</option>
+                                            <option value="meadery">Meadery</option>
+                                    </select><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" data-id="locationType" title="All Types"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">All Types</div></div> </div><span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><div class="inner open" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner "></ul></div></div></div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="locality">City/Locality</label>
+                <input type="text" class="form-control" id="locality" name="locality" value="">
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="region">State/Region</label>
+                <input type="text" class="form-control" id="region" name="region" value="">
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="countryIsoCode">Country</label>
+                <div class="dropdown bootstrap-select form-control show-tick"><select class="form-control selectpicker show-tick" id="countryIsoCode" name="countryIsoCode" required="" data-live-search="true" tabindex="-98">
+                                            <option value="AF">Afghanistan</option>
+                                            <option value="AL">Albania</option>
+                                            <option value="DZ">Algeria</option>
+                                            <option value="AS">American Samoa</option>
+                                            <option value="AD">Andorra</option>
+                                            <option value="AO">Angola</option>
+                                            <option value="AI">Anguilla</option>
+                                            <option value="AQ">Antarctica</option>
+                                            <option value="AG">Antigua and Barbuda</option>
+                                            <option value="AR">Argentina</option>
+                                            <option value="AM">Armenia</option>
+                                            <option value="AW">Aruba</option>
+                                            <option value="AU">Australia</option>
+                                            <option value="AT">Austria</option>
+                                            <option value="AZ">Azerbaijan</option>
+                                            <option value="BS">Bahamas</option>
+                                            <option value="BH">Bahrain</option>
+                                            <option value="BD">Bangladesh</option>
+                                            <option value="BB">Barbados</option>
+                                            <option value="BY">Belarus</option>
+                                            <option value="BE">Belgium</option>
+                                            <option value="BZ">Belize</option>
+                                            <option value="BJ">Benin</option>
+                                            <option value="BM">Bermuda</option>
+                                            <option value="BT">Bhutan</option>
+                                            <option value="BO">Bolivia</option>
+                                            <option value="BA">Bosnia and Herzegovina</option>
+                                            <option value="BW">Botswana</option>
+                                            <option value="BV">Bouvet Island</option>
+                                            <option value="BR">Brazil</option>
+                                            <option value="IO">British Indian Ocean Territory</option>
+                                            <option value="BN">Brunei Darussalam</option>
+                                            <option value="BG">Bulgaria</option>
+                                            <option value="BF">Burkina Faso</option>
+                                            <option value="BI">Burundi</option>
+                                            <option value="KH">Cambodia</option>
+                                            <option value="CM">Cameroon</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="CV">Cape Verde</option>
+                                            <option value="KY">Cayman Islands</option>
+                                            <option value="CF">Central African Republic</option>
+                                            <option value="TD">Chad</option>
+                                            <option value="CL">Chile</option>
+                                            <option value="CN">China</option>
+                                            <option value="CX">Christmas Island</option>
+                                            <option value="CC">Cocos (Keeling) Islands</option>
+                                            <option value="CO">Colombia</option>
+                                            <option value="KM">Comoros</option>
+                                            <option value="CG">Congo</option>
+                                            <option value="CD">Congo, the Democratic Republic of the</option>
+                                            <option value="CK">Cook Islands</option>
+                                            <option value="CR">Costa Rica</option>
+                                            <option value="CI">Cote D'Ivoire</option>
+                                            <option value="HR">Croatia</option>
+                                            <option value="CU">Cuba</option>
+                                            <option value="CY">Cyprus</option>
+                                            <option value="CZ">Czech Republic</option>
+                                            <option value="DK">Denmark</option>
+                                            <option value="DJ">Djibouti</option>
+                                            <option value="DM">Dominica</option>
+                                            <option value="DO">Dominican Republic</option>
+                                            <option value="EC">Ecuador</option>
+                                            <option value="EG">Egypt</option>
+                                            <option value="SV">El Salvador</option>
+                                            <option value="GQ">Equatorial Guinea</option>
+                                            <option value="ER">Eritrea</option>
+                                            <option value="EE">Estonia</option>
+                                            <option value="ET">Ethiopia</option>
+                                            <option value="FK">Falkland Islands (Malvinas)</option>
+                                            <option value="FO">Faroe Islands</option>
+                                            <option value="FJ">Fiji</option>
+                                            <option value="FI">Finland</option>
+                                            <option value="FR">France</option>
+                                            <option value="GF">French Guiana</option>
+                                            <option value="PF">French Polynesia</option>
+                                            <option value="TF">French Southern Territories</option>
+                                            <option value="GA">Gabon</option>
+                                            <option value="GM">Gambia</option>
+                                            <option value="GE">Georgia</option>
+                                            <option value="DE">Germany</option>
+                                            <option value="GH">Ghana</option>
+                                            <option value="GI">Gibraltar</option>
+                                            <option value="GR">Greece</option>
+                                            <option value="GL">Greenland</option>
+                                            <option value="GD">Grenada</option>
+                                            <option value="GP">Guadeloupe</option>
+                                            <option value="GU">Guam</option>
+                                            <option value="GT">Guatemala</option>
+                                            <option value="GN">Guinea</option>
+                                            <option value="GW">Guinea-Bissau</option>
+                                            <option value="GY">Guyana</option>
+                                            <option value="HT">Haiti</option>
+                                            <option value="HM">Heard Island and Mcdonald Islands</option>
+                                            <option value="VA">Holy See (Vatican City State)</option>
+                                            <option value="HN">Honduras</option>
+                                            <option value="HK">Hong Kong</option>
+                                            <option value="HU">Hungary</option>
+                                            <option value="IS">Iceland</option>
+                                            <option value="IN">India</option>
+                                            <option value="ID">Indonesia</option>
+                                            <option value="IR">Iran, Islamic Republic of</option>
+                                            <option value="IQ">Iraq</option>
+                                            <option value="IE">Ireland</option>
+                                            <option value="IL">Israel</option>
+                                            <option value="IT">Italy</option>
+                                            <option value="JM">Jamaica</option>
+                                            <option value="JP">Japan</option>
+                                            <option value="JO">Jordan</option>
+                                            <option value="KZ">Kazakhstan</option>
+                                            <option value="KE">Kenya</option>
+                                            <option value="KI">Kiribati</option>
+                                            <option value="KP">Korea, Democratic People's Republic of</option>
+                                            <option value="KR">Korea, Republic of</option>
+                                            <option value="KW">Kuwait</option>
+                                            <option value="KG">Kyrgyzstan</option>
+                                            <option value="LA">Lao People's Democratic Republic</option>
+                                            <option value="LV">Latvia</option>
+                                            <option value="LB">Lebanon</option>
+                                            <option value="LS">Lesotho</option>
+                                            <option value="LR">Liberia</option>
+                                            <option value="LY">Libyan Arab Jamahiriya</option>
+                                            <option value="LI">Liechtenstein</option>
+                                            <option value="LT">Lithuania</option>
+                                            <option value="LU">Luxembourg</option>
+                                            <option value="MO">Macao</option>
+                                            <option value="MK">Macedonia, the Former Yugoslav Republic of</option>
+                                            <option value="MG">Madagascar</option>
+                                            <option value="MW">Malawi</option>
+                                            <option value="MY">Malaysia</option>
+                                            <option value="MV">Maldives</option>
+                                            <option value="ML">Mali</option>
+                                            <option value="MT">Malta</option>
+                                            <option value="MH">Marshall Islands</option>
+                                            <option value="MQ">Martinique</option>
+                                            <option value="MR">Mauritania</option>
+                                            <option value="MU">Mauritius</option>
+                                            <option value="YT">Mayotte</option>
+                                            <option value="MX">Mexico</option>
+                                            <option value="FM">Micronesia, Federated States of</option>
+                                            <option value="MD">Moldova, Republic of</option>
+                                            <option value="MC">Monaco</option>
+                                            <option value="MN">Mongolia</option>
+                                            <option value="MS">Montserrat</option>
+                                            <option value="MA">Morocco</option>
+                                            <option value="MZ">Mozambique</option>
+                                            <option value="MM">Myanmar</option>
+                                            <option value="NA">Namibia</option>
+                                            <option value="NR">Nauru</option>
+                                            <option value="NP">Nepal</option>
+                                            <option value="NL">Netherlands</option>
+                                            <option value="AN">Netherlands Antilles</option>
+                                            <option value="NC">New Caledonia</option>
+                                            <option value="NZ">New Zealand</option>
+                                            <option value="NI">Nicaragua</option>
+                                            <option value="NE">Niger</option>
+                                            <option value="NG">Nigeria</option>
+                                            <option value="NU">Niue</option>
+                                            <option value="NF">Norfolk Island</option>
+                                            <option value="MP">Northern Mariana Islands</option>
+                                            <option value="NO">Norway</option>
+                                            <option value="OM">Oman</option>
+                                            <option value="PK">Pakistan</option>
+                                            <option value="PW">Palau</option>
+                                            <option value="PS">Palestinian Territory, Occupied</option>
+                                            <option value="PA">Panama</option>
+                                            <option value="PG">Papua New Guinea</option>
+                                            <option value="PY">Paraguay</option>
+                                            <option value="PE">Peru</option>
+                                            <option value="PH">Philippines</option>
+                                            <option value="PN">Pitcairn</option>
+                                            <option value="PL">Poland</option>
+                                            <option value="PT">Portugal</option>
+                                            <option value="PR">Puerto Rico</option>
+                                            <option value="QA">Qatar</option>
+                                            <option value="RE">Reunion</option>
+                                            <option value="RO">Romania</option>
+                                            <option value="RU">Russian Federation</option>
+                                            <option value="RW">Rwanda</option>
+                                            <option value="SH">Saint Helena</option>
+                                            <option value="KN">Saint Kitts and Nevis</option>
+                                            <option value="LC">Saint Lucia</option>
+                                            <option value="PM">Saint Pierre and Miquelon</option>
+                                            <option value="VC">Saint Vincent and the Grenadines</option>
+                                            <option value="WS">Samoa</option>
+                                            <option value="SM">San Marino</option>
+                                            <option value="ST">Sao Tome and Principe</option>
+                                            <option value="SA">Saudi Arabia</option>
+                                            <option value="SN">Senegal</option>
+                                            <option value="CS">Serbia and Montenegro</option>
+                                            <option value="SC">Seychelles</option>
+                                            <option value="SL">Sierra Leone</option>
+                                            <option value="SG">Singapore</option>
+                                            <option value="SK">Slovakia</option>
+                                            <option value="SI">Slovenia</option>
+                                            <option value="SB">Solomon Islands</option>
+                                            <option value="SO">Somalia</option>
+                                            <option value="ZA">South Africa</option>
+                                            <option value="GS">South Georgia and the South Sandwich Islands</option>
+                                            <option value="ES">Spain</option>
+                                            <option value="LK">Sri Lanka</option>
+                                            <option value="SD">Sudan</option>
+                                            <option value="SR">Suriname</option>
+                                            <option value="SJ">Svalbard and Jan Mayen</option>
+                                            <option value="SZ">Swaziland</option>
+                                            <option value="SE">Sweden</option>
+                                            <option value="CH">Switzerland</option>
+                                            <option value="SY">Syrian Arab Republic</option>
+                                            <option value="TW">Taiwan, Province of China</option>
+                                            <option value="TJ">Tajikistan</option>
+                                            <option value="TZ">Tanzania, United Republic of</option>
+                                            <option value="TH">Thailand</option>
+                                            <option value="TL">Timor-Leste</option>
+                                            <option value="TG">Togo</option>
+                                            <option value="TK">Tokelau</option>
+                                            <option value="TO">Tonga</option>
+                                            <option value="TT">Trinidad and Tobago</option>
+                                            <option value="TN">Tunisia</option>
+                                            <option value="TR">Turkey</option>
+                                            <option value="TM">Turkmenistan</option>
+                                            <option value="TC">Turks and Caicos Islands</option>
+                                            <option value="TV">Tuvalu</option>
+                                            <option value="UG">Uganda</option>
+                                            <option value="UA">Ukraine</option>
+                                            <option value="AE">United Arab Emirates</option>
+                                            <option value="GB">United Kingdom</option>
+                                            <option value="US" selected="">United States</option>
+                                            <option value="UM">United States Minor Outlying Islands</option>
+                                            <option value="UY">Uruguay</option>
+                                            <option value="UZ">Uzbekistan</option>
+                                            <option value="VU">Vanuatu</option>
+                                            <option value="VE">Venezuela</option>
+                                            <option value="VN">Viet Nam</option>
+                                            <option value="VG">Virgin Islands, British</option>
+                                            <option value="VI">Virgin Islands, U.s.</option>
+                                            <option value="WF">Wallis and Futuna</option>
+                                            <option value="EH">Western Sahara</option>
+                                            <option value="YE">Yemen</option>
+                                            <option value="ZM">Zambia</option>
+                                            <option value="ZW">Zimbabwe</option>
+                                    </select><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" data-id="countryIsoCode" title="United States"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">United States</div></div> </div><span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="textbox" aria-label="Search"></div><div class="inner open" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner "></ul></div></div></div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="form-group">
+                <input type="submit" value="Find Breweries" class="btn btn-primary btn-inline" id="findButton">
+            </div>
+
+        </div>
+    </div>
+    </form>
+    <hr>
+
+            <div class="row">
+            <div class="col-sm-12">
+                                    <div class="row">
+                        <div class="col-sm-6 col-sm-push-3">
+                            <h4>Try these popular searches, or select your own area:</h4>
+                            <ul class="list-8" style="margin-left:20px">
+                                                                <li><a href="/browse/regional/index/locality/Asheville/region/North+Carolina/countryIsoCode/US">Asheville, North Carolina</a></li>
+                                                                <li><a href="/browse/regional/index/locality/Chicago/region/Illinois/countryIsoCode/US">Chicago, Illinois</a></li>
+                                                                <li><a href="/browse/regional/index/locality/Boston/region/Massachusetts/countryIsoCode/US">Boston, Massachusetts</a></li>
+                                                                <li><a href="/browse/regional/index/locality/Portland/region/Oregon/countryIsoCode/US">Portland, Oregon</a></li>
+                                                                <li><a href="/browse/regional/index/locality/Austin/region/Texas/countryIsoCode/US">Austin, Texas</a></li>
+                                                            </ul>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+
+    </div>    </div>
+
+    <!-- Main content ends -->
+
+<!-- Foot Starts -->
+
+<div class="foot">
+    <!-- Container -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <!-- Foot Item -->
+                    <!-- Heading -->
+                    <div class="row">
+                        <div class="col-xs-3 text-center">
+                            <img src="/img/ss-logo-full-white@2x.png" width="100">
+                        </div>
+                        <div class="col-xs-9">
+                            <p>
+                                BreweryDB is the most complete database of breweries and beers.
+                                Curated by our administrators, you can be sure that our data
+                                is timely and accurate. BreweryDB is owned and operated by SteadyServ
+                                Technologies.
+                            </p>
+                            <div class="brand-bg">
+                                <!-- Social Media Icons -->
+                                <a href="http://facebook.com/steadyserv" class="facebook"><i class="fab fa-facebook circle-3"></i></a>
+                                <a href="http://twitter.com/steadyserv" class="twitter"><i class="fab fa-twitter circle-3"></i></a>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <!-- Foot Item -->
+                <div class="foot-item" style="margin-top: 0">
+                    <!-- Foot Item Content -->
+                    <div class="foot-item-content address">
+                        <!-- Heading -->
+                        <h6 class="bold"><i class="fa fa-home"></i>&nbsp;&nbsp;SteadyServ Technologies</h6>
+                        <!-- Paragraph -->
+                        <p class="add">
+                            Indiana IoT Lab<br>
+                            9059 Technology Lane<br>
+                            Fishers, IN 46038
+                        </p><p class="tel"> <i class="fa fa-phone"></i> (800) 257-6898<br>
+                            <i class="fa fa-envelope"></i> <a href="/contact" class="white">brewerydb@steadyserv.com</a>
+                    </p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <!-- Container -->
+        <div class="container">
+            <!-- Footer Content -->
+            <!-- Paragraph -->
+                        <p class="pull-left">Copyright © 2010 - 2019 - <a href="https://www.steadyserv.com" target="_blank">SteadyServ Technologies</a></p>
+            <ul class="list-inline pull-right">
+                <!-- List -->
+                <li><a href="/">Home</a></li><li>
+                </li><li><a href="/terms">Terms of Use</a></li>
+                <li><a href="/disclaimer">Disclaimer</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/privacy">Cookie Policy</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <!-- Clearfix -->
+            <div class="clearfix"></div>
+        </div>
+    </footer>
+</div>
+
+<!-- Foot Ends -->
+
+<!-- Footer Starts -->
+
+
+
+<!-- Footer Ends -->
+
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="/node_modules/bootstrap3/dist/js/bootstrap.min.js?v=3.2.3"></script>
+<script type="text/javascript" src="/node_modules/sweetalert/dist/sweetalert.min.js?v=3.2.3"></script>
+<script type="text/javascript" src="/js/placeholders.js?v=3.2.3"></script>
+<script type="text/javascript" src="/js/mgmenu.min.js?v=3.2.3"></script>
+<script type="text/javascript" src="/js/mgmenu_plugins.js?v=3.2.3"></script>
+<script type="text/javascript" src="/js/jquery.magnific-popup.min.js?v=3.2.3"></script>
+<script type="text/javascript" src="/js/owl.carousel.min.js?v=3.2.3"></script>
+<script type="text/javascript" src="/js/respond.min.js?v=3.2.3"></script>
+<script type="text/javascript" src="/js/html5shiv.js?v=3.2.3"></script>
+<script type="text/javascript" src="/js/main.js?v=3.2.3"></script>
+<script type="text/javascript" src="/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js?v=3.2.3"></script>
+
+<!-- Outer Ends -->
+
+</body>

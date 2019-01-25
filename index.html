@@ -37,6 +37,7 @@
 
     <div class="row">
         <input id="name" type="text" placeholder="Your name">
+        <!--JR3: I think we should leave this part alone for year, it doesn't matter if the user thinks its 2019-->
         <input id="date" type="date" placeholder="Today's date (mm/dd/yyyy)">
         <input id="country" type="text" placeholder="Pick a country">
         <input id="state" type="text" placeholder="Pick a state">
@@ -113,8 +114,12 @@ var config = {
   
     var name = $("#name").val().trim();
     console.log(name);
+
+//JR3: OK I think this is the part we need to append the year
     var date = $("#date").val().trim();
     console.log(date);
+
+
     var country = $("#country").val().trim();
     console.log(country);
     var state = $("#state").val().trim();
@@ -146,6 +151,7 @@ var config = {
       $("#user-info").append(
         $("<tr>").append(
           $("<td>").text(name),
+            //JR3: Again, I think we should leave this part alone for year, it doesn't matter if the user thinks its 2019
           $("<td>").text(date),
           $("<td>").text(country),
           $("<td>").text(state),
@@ -172,6 +178,7 @@ var config = {
 ///////////////////  BREWERY API CODE  /////////////////////////////////////
 
 var searchDate;
+// JR3: we might want to change this to breweryYear so we don't have a conflict between the holiday api and brewery api
 var year = "2019";
 var month = "01";
 var day = "19";
