@@ -36,12 +36,12 @@
 
 
     <div class="row">
-        <input id="name" type="text" placeholder="Your name">
+        <input id="name" type="text" placeholder="What's your name?">
         <!--JR3: I think we should leave this part alone for year, it doesn't matter if the user thinks its 2019-->
         <input id="date" type="date" placeholder="Today's date (mm/dd/yyyy)">
-        <input id="country" type="text" placeholder="Pick a country">
-        <input id="state" type="text" placeholder="Pick a state">
-        <input id="region" type="text" placeholder="Pick a city">
+        <input id="country" type="text" placeholder="Search a country code to find a holiday!">
+        <input id="state" type="text" placeholder="What state are you drinking in?">
+        <input id="region" type="text" placeholder="What city are you drinking in?">
       </div>
       <div class="row">
         <button class="button-primary" id="submit">Submit</button>
@@ -75,8 +75,10 @@
               </table>
           </div>
         </div>
-        <div class="col-md-6">
-          <div id="holStuff">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <div id="holDiv" class="panel-body">
+            <!-- <table id="holStuff" class="table"> -->
             <!--Holiday stuff goes here -->
           </div>
         </div>
@@ -148,16 +150,6 @@ var config = {
         
       })
 
-      $("#user-info").append(
-        $("<tr>").append(
-          $("<td>").text(name),
-            //JR3: Again, I think we should leave this part alone for year, it doesn't matter if the user thinks its 2019
-          $("<td>").text(date),
-          $("<td>").text(country),
-          $("<td>").text(state),
-          $("<td>").text(region)
-        )
-      )
 
       console.log(date);
 
@@ -165,6 +157,7 @@ var config = {
       searchState = $("#state").val();
       searchCountry = $("#country").val();
       clearTable("brewTable");
+      clearDiv();
       getHolidays();
       getBreweries(searchCountry, searchState, searchCity);
       
@@ -220,7 +213,7 @@ function getHolidays() {
     var newNewDate = newDate.slice(0, 10)
     console.log('newDate', newNewDate);
 
-    $("#holStuff").append("<p>" + nombre + newNewDate + "</p>")
+    $("#holDiv").append("<p>" + nombre + newNewDate + "</p>")
     
    }
   });
@@ -275,6 +268,9 @@ function callAjax(queryURL){
 
 function clearTable(tableID){
     $("#"+tableID+ " tbody").empty();
+}      
+function clearDiv(){
+    $("#holDiv").empty();
 }      
       
       </script>
