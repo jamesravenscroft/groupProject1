@@ -211,14 +211,17 @@ function getHolidays() {
    }).then(function(response) {
    console.log(response);
    var useMe = response.response.holidays;
-   let newDate = response.response.holidays[0].date;
-   let newNewDate = newDate.slice(0, 10)
-   console.log('newDate', newNewDate);
    console.log(useMe.length);
    for(var j = 0; j <useMe.length; j++) {
-     console.log(j);
-     var nombre = useMe[j].name;
+    console.log(j);
+    var nombre = useMe[j].name;
     console.log(nombre);
+    var newDate = useMe[j].date;
+    var newNewDate = newDate.slice(0, 10)
+    console.log('newDate', newNewDate);
+
+    $("#holStuff").append("<p>" + nombre + newNewDate + "</p>")
+    
    }
   });
 
