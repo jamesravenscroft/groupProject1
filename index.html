@@ -77,7 +77,7 @@
         </div>
         <div class="col-md-6">
           <div id="holStuff">
-            Holiday Stuff Goes Here
+            <!--Holiday stuff goes here -->
           </div>
         </div>
       </div>
@@ -169,8 +169,7 @@ var config = {
       getBreweries(searchCountry, searchState, searchCity);
       
 
-        // var queryURL = "https://www.calendarindex.com/api/v1/holidays?api_key=a964218e0494e47c37482a2d99753eaa276f1978&country=us" + "&year=" + year;
-
+       
         }) 
   });
 
@@ -191,6 +190,7 @@ $(document).ready(function(){
 
 });
 
+// this is no longer required
 function getHolidays() {
 //what is needed for CalendarIndex
 //country, year, api_key(a964218e0494e47c37482a2d99753eaa276f1978), state
@@ -210,19 +210,19 @@ function getHolidays() {
    method: "GET"
    }).then(function(response) {
    console.log(response);
-   });
+   var useMe = response.response.holidays;
+   let newDate = response.response.holidays[0].date;
+   let newNewDate = newDate.slice(0, 10)
+   console.log('newDate', newNewDate);
+   console.log(useMe.length);
+   for(var j = 0; j <useMe.length; j++) {
+     console.log(j);
+     var nombre = useMe[j].name;
+    console.log(nombre);
+   }
+  });
 
 };
-
-// $("#submit").on("click", function(){
-//     searchCity = $("#region").val();
-//     searchState = $("#state").val();
-//     searchCountry = $("#country").val();
-//     clearTable("brewTable");
-//     getBreweries(searchCountry, searchState, searchCity);
-// });
-
-
 
 function getBreweries(country, state, city){
     var queryURL = "https://api.openbrewerydb.org/breweries?";
