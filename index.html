@@ -178,11 +178,6 @@ var searchCountry;
 var searchState;
 var searchCity;
 
-// if objects need to load in doc first
-$(document).ready(function(){
-
-});
-
 // this is no longer required
 function getHolidays() {
 //what is needed for CalendarIndex
@@ -190,11 +185,11 @@ function getHolidays() {
 
   var country = searchCountry;
   console.log(country);
-  var date = "2019";
+  var dateCal = "2019";
   var state = searchState;
   console.log(state);
 
-  var queryURLTwo = "https://calendarific.com/api/v1/holidays?country=" + country + "&year=" + date + "&state=" + state + "&api_key=a964218e0494e47c37482a2d99753eaa276f1978";
+  var queryURLTwo = "https://calendarific.com/api/v1/holidays?country=" + country + "&year=" + dateCal + "&state=" + state + "&api_key=a964218e0494e47c37482a2d99753eaa276f1978";
 
 
 
