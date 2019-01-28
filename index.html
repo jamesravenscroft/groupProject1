@@ -18,11 +18,11 @@
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
             
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
-    <script src="./assets/javascript/app.js"></script>
+    <script src="./assets/javascript/moment.js"></script>
 </head>
 <body>
     <div class="container">
-        <div class="jumbotron">
+      <div class="jumbotron">
         <h1 class="display-4">Reason to Drink!</h1>
         <p class="lead">You're awesome. Its time to celebrate</p>
         <hr class="my-4">
@@ -33,7 +33,7 @@
             <p class="lead">Click a day and get ready to party away.<br>
             </p>
           </div>
-
+      </div>  
 
     <div class="row">
         <input id="name" type="text" placeholder="Your name">
@@ -44,7 +44,7 @@
         <input id="region" type="text" placeholder="Pick a city">
       </div>
       <div class="row">
-        <button class="button-primary" id="submit">Submit</button>
+        <button type="button" class="btn btn-primary" id="submit">Submit</button>
       </div>
 
       <div id="user-info">
@@ -55,7 +55,13 @@
         <h4 id="region-display"></h4>
         
       </div>
-
+      <div class="row">
+        <div class="col-md-6">
+          <div id="holStuff">
+            <!--Holiday stuff goes here -->
+          </div>
+        </div>
+      </div>
       <!-- ADDED LIST OF BREWERIES BASED ON USER INFO -->
       <div class="row">
         <div class="col-md-6">
@@ -75,27 +81,19 @@
               </table>
           </div>
         </div>
-        <div class="col-md-6">
-          <div id="holStuff">
-            <!--Holiday stuff goes here -->
-          </div>
-        </div>
+
       </div>
 
       <script>
       $(document).ready(function(){
 
-var now = new Date();
+        var now = new Date();
 
 var day = ("0" + now.getDate()).slice(-2);
 var month = ("0" + (now.getMonth() + 1)).slice(-2);
 var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
 $('#date').val(today);
 
-
-var day = $("#date").val().slice(-2);
-var month = ("0" + (now.getMonth() + 1)).slice(-2);
-var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
 
 var config = {
     apiKey: "AIzaSyAcInbqzuEob8iQJg2J9F_6qW_09Ct9FTQ",
@@ -148,23 +146,23 @@ var config = {
         
       })
 
-      $("#user-info").append(
-        $("<tr>").append(
-          $("<td>").text(name),
-            //JR3: Again, I think we should leave this part alone for year, it doesn't matter if the user thinks its 2019
-          $("<td>").text(date),
-          $("<td>").text(country),
-          $("<td>").text(state),
-          $("<td>").text(region)
-        )
-      )
+      // $("#user-info").append(
+      //   $("<tr>").append(
+      //     $("<td>").text(name),
+      //       //JR3: Again, I think we should leave this part alone for year, it doesn't matter if the user thinks its 2019
+      //     $("<td>").text(date),
+      //     $("<td>").text(country),
+      //     $("<td>").text(state),
+      //     $("<td>").text(region)
+      //   )
+      // )
 
       console.log(date);
 
       searchCity = $("#region").val();
       searchState = $("#state").val();
       searchCountry = $("#country").val();
-      clearTable("brewTable");
+      clearResults("brewTable");
       getHolidays();
       getBreweries(searchCountry, searchState, searchCity);
       
@@ -187,13 +185,21 @@ var searchCity;
 
 // if objects need to load in doc first
 $(document).ready(function(){
+  // var enteredDate = $("#date").val();
 
+  // momentDate = moment(enteredDate).format('YYYY-MM-DD');
+  // momentStartDate = moment(enteredDate).subtract(14, 'days');
+  // momentEndDate = moment(enteredDate).add(14, 'days');
+
+  // startDate = moment(momentStartDate).format('YYYY-MM-DD');
+  // endDate = moment(momentEndDate).format('YYYY-MM-DD');
+
+  // console.log(momentDate);
+  // console.log(startDate);
+  // console.log(endDate);
 });
 
-// this is no longer required
 function getHolidays() {
-//what is needed for CalendarIndex
-//country, year, api_key(a964218e0494e47c37482a2d99753eaa276f1978), state
 
   var country = searchCountry;
   console.log(country);
@@ -201,27 +207,36 @@ function getHolidays() {
   var state = searchState;
   console.log(state);
 
+  var enteredDate = $("#date").val();
+
+  momentDate = moment(enteredDate).format('YYYY-MM-DD');
+  momentStartDate = moment(enteredDate).subtract(14, 'days');
+  momentEndDate = moment(enteredDate).add(14, 'days');
+
+  startDate = moment(momentStartDate).format('YYYY-MM-DD');
+  endDate = moment(momentEndDate).format('YYYY-MM-DD');
+
   var queryURLTwo = "https://calendarific.com/api/v1/holidays?country=" + country + "&year=" + date + "&state=" + state + "&api_key=a964218e0494e47c37482a2d99753eaa276f1978";
 
-
-
-   $.ajax({
+  $.ajax({
    url: queryURLTwo,
    method: "GET"
    }).then(function(response) {
-   console.log(response);
-   var useMe = response.response.holidays;
-   let newDate = response.response.holidays[0].date;
-   let newNewDate = newDate.slice(0, 10)
-   console.log('newDate', newNewDate);
-   console.log(useMe.length);
-   for(var j = 0; j <useMe.length; j++) {
-     console.log(j);
-     var nombre = useMe[j].name;
-    console.log(nombre);
-   }
-  });
-
+      console.log(response);
+      var useMe = response.response.holidays;
+      for(i=0; i<response.response.holidays.length; i++){
+        // if(dateParam == response.response.holidays[i].date){
+        if(startDate < response.response.holidays[i].date && response.response.holidays[i].date < endDate){
+            var responseDate = response.response.holidays[i].date;
+            var responseName = response.response.holidays[i].name;
+            $("#holStuff").append("<h4>Holidays</h4><div class='row'><div class='col-md-6'>" 
+                                  + responseDate 
+                                  + "</div><div class='col-md-6'>" 
+                                  + responseName 
+                                  + "</div><div>");
+          }
+      }
+   });
 };
 
 function getBreweries(country, state, city){
@@ -262,7 +277,7 @@ function callAjax(queryURL){
         
         }
         
-        console.log(response);
+        // console.log(response);
 
       });
   };
@@ -270,8 +285,9 @@ function callAjax(queryURL){
 
 
 
-function clearTable(tableID){
+function clearResults(tableID){
     $("#"+tableID+ " tbody").empty();
+    $("#holStuff").empty();
 }      
       
       </script>
