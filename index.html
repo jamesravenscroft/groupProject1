@@ -146,17 +146,6 @@ var config = {
         
       })
 
-      // $("#user-info").append(
-      //   $("<tr>").append(
-      //     $("<td>").text(name),
-      //       //JR3: Again, I think we should leave this part alone for year, it doesn't matter if the user thinks its 2019
-      //     $("<td>").text(date),
-      //     $("<td>").text(country),
-      //     $("<td>").text(state),
-      //     $("<td>").text(region)
-      //   )
-      // )
-
       console.log(date);
 
       searchCity = $("#region").val();
@@ -185,18 +174,7 @@ var searchCity;
 
 // if objects need to load in doc first
 $(document).ready(function(){
-  // var enteredDate = $("#date").val();
 
-  // momentDate = moment(enteredDate).format('YYYY-MM-DD');
-  // momentStartDate = moment(enteredDate).subtract(14, 'days');
-  // momentEndDate = moment(enteredDate).add(14, 'days');
-
-  // startDate = moment(momentStartDate).format('YYYY-MM-DD');
-  // endDate = moment(momentEndDate).format('YYYY-MM-DD');
-
-  // console.log(momentDate);
-  // console.log(startDate);
-  // console.log(endDate);
 });
 
 function getHolidays() {
@@ -276,9 +254,7 @@ function callAjax(queryURL){
                                 + "<td>" + resultCity + "</td><td>" + resultState + "</td><td>" + resultCountry + "</td><td></tr>");
         
         }
-        
         // console.log(response);
-
       });
   };
 
