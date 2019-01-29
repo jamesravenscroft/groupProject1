@@ -29,8 +29,6 @@
         <h1 id="display-3">Reason to Drink!</h1>
         <p id="lead-1">You're awesome. It's time to celebrate.</p>
         <hr class="my-4">
-        <br>
-        <img src="assets/images/beerPourTap.gif" class="center">
         <!-- <p>Find a reason to celebrate and a brewery to get crunk at.</p> -->
 
         <div class="starter-template">
@@ -207,20 +205,20 @@ function getHolidays() {
    }).then(function(response) {
       console.log(response);
       var useMe = response.response.holidays;
-      $("#holStuff").html("<h5>Sorry, no holidays match your search criteria.");
       for(i=0; i<response.response.holidays.length; i++){
+        // if(dateParam == response.response.holidays[i].date){
         if(startDate < response.response.holidays[i].date && response.response.holidays[i].date < endDate){
-            // var responseDate = response.response.holidays[i].date;
             var responseDate = response.response.holidays[i].date;
-            responseDate = responseDate.slice(0,-9);
-            responseDate = moment(responseDate).format('LL');
             var responseName = response.response.holidays[i].name;
-            $("#holStuff").html("<h4>Holidays</h4><div class='row'><div class='col-md-6'>" 
+            $("#holStuff").append("<h4>Holidays</h4><div class='row'><div class='col-md-6'>" 
                                   + responseDate 
                                   + "</div><div class='col-md-6'>" 
                                   + responseName 
                                   + "</div><div>");
-         } 
+         } else {
+            $("#holStuff").append("<div class='row'><div class='col-md-12'><h4>Sorry, no holidays within your search range.</h4></div>" 
+                                  + "<div class='row'><div class='col-md-12'>But hey, let's drink anyway. Find a brewery below!</div></div>");
+          }
       }
    });
 };

@@ -175,3 +175,7 @@ $("#"+tableID+ " tbody").empty();
 function clearDiv(){
 $("#holDiv").empty();
 }      
+
+function showDiv() {
+    document.getElementById('welcomeDiv').style.display = "block";
+ }

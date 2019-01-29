@@ -30,4 +30,17 @@ body {
 	background-repeat: repeat;
 	background-position: right top;
 	background-attachment: fixed;
+	margin-top:-10;
 	}
+
+#holStuff{
+	text-align: center;
+	font-family: 'Thasadith', sans-serif;
+	font-size: 44px; 
+}
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+  }
