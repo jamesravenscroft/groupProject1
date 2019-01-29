@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Group Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Dawning+of+a+New+Day|Staatliches" rel="stylesheet">
+    <link rel="stylesheet"  href="./assets/css/style.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
@@ -22,26 +25,26 @@
 </head>
 <body>
     <div class="container">
-      <div class="jumbotron">
-        <h1 class="display-4">Reason to Drink!</h1>
-        <p class="lead">You're awesome. Its time to celebrate</p>
+      <div class="jumbotron bg-white">
+        <h1 id="display-3">Reason to Drink!</h1>
+        <p id="lead-1">You're awesome. It's time to celebrate.</p>
         <hr class="my-4">
-        <p>Find a reason to celebrate and a brewery to get crunk at.</p>
+        <!-- <p>Find a reason to celebrate and a brewery to get crunk at.</p> -->
 
         <div class="starter-template">
-            <h1>Pick a Day</h1>
-            <p class="lead">Click a day and get ready to party away.<br>
-            </p>
+          <h1 id="display-4">How to Play</h1>
+          <p id="lead-2">Enter your info. Find a holiday to celebrate and a brewery to drink at. Cheers!<br>
+          </p>
           </div>
-      </div>  
+      <!-- </div>   -->
 
     <div class="row">
-        <input id="name" type="text" placeholder="Your name">
+        <input id="name" type="text" placeholder="What's your name?">
         <!--JR3: I think we should leave this part alone for year, it doesn't matter if the user thinks its 2019-->
         <input id="date" type="date" placeholder="Today's date (mm/dd/yyyy)">
-        <input id="country" type="text" placeholder="Pick a country">
-        <input id="state" type="text" placeholder="Pick a state">
-        <input id="region" type="text" placeholder="Pick a city">
+        <input id="country" type="text" placeholder="Search a country code to find a holiday!">
+        <input id="state" type="text" placeholder="What state are you drinking in?">
+        <input id="region" type="text" placeholder="What city are you drinking in?">
       </div>
       <div class="row">
         <button type="button" class="btn btn-primary" id="submit">Submit</button>
