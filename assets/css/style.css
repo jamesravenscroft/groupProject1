@@ -36,8 +36,20 @@ body {
 #holStuff{
 	text-align: center;
 	font-family: 'Thasadith', sans-serif;
-	font-size: 44px; 
+	font-size: 16px; 
 }
+
+#brewTable{
+	text-align: center;
+	font-family: 'Thasadith', sans-serif;
+	font-size: 16px; 
+}
+
+.input-text {
+	font-family: 'Thasadith', sans-serif;
+	font-size: 16px; 
+}
+
 .center {
 	display: block;
 	margin-left: auto;
