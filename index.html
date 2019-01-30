@@ -51,7 +51,7 @@
         <input class="input-text" id="region" type="text" placeholder="What city are you drinking in?">
       </div>
       <div class="row">
-        <button type="button" class="btn btn-primary" id="submit">Submit</button>
+        <button type="button" class="btn btn-primary btn-floating btn-large pulse" id="submit">Submit</button>
       </div>
 
       <div id="user-info">
@@ -209,7 +209,7 @@ function getHolidays() {
    }).then(function(response) {
       console.log(response);
       var useMe = response.response.holidays;
-      $("#holStuff").html("<h5>Sorry, no holidays match your search criteria.");
+      $("#holStuff").html("<h5>Sorry, we couldnt find an excuse for you, try a different country, be cultured. ");
       for(i=0; i<response.response.holidays.length; i++){
         if(startDate < response.response.holidays[i].date && response.response.holidays[i].date < endDate){
             // var responseDate = response.response.holidays[i].date;
